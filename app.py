@@ -22,7 +22,7 @@ with st.sidebar:
 
 # bagian luar sidebar
 if page == 'EDA':
-    eda.run()
+    eda.app()
 
 else:
-    predict.run()
+    predict.app()
