@@ -38,7 +38,7 @@ def _center_plot(fig):
     plt.close(fig)
 
 @st.cache_data(show_spinner=False)
-def load_telco(csv_path: str = "WA_Fn-UseC_-Telco-Customer-Churn.csv") -> pd.DataFrame:
+def load_telco(csv_path: str = "Deploy-Fase-1/WA_Fn-UseC_-Telco-Customer-Churn.csv") -> pd.DataFrame:
     df = pd.read_csv(csv_path)
     df = df.rename(columns={c: c.strip() for c in df.columns})
     if "Churn" in df.columns:
@@ -58,7 +58,7 @@ def run(csv_path: str = "WA_Fn-UseC_-Telco-Customer-Churn.csv"):
     st.markdown("<h1 style='text-align: center;'>Telco Customer Churn</h1>", unsafe_allow_html=True)
 
     # Gambar churn_gambar di tengah
-    img_path = Path("churn_gambar.jpg")
+    img_path = Path("Deploy-Fase-1/churn_gambar.jpg")
     if img_path.exists():
         with open(img_path, "rb") as f:
             img_bytes = f.read()
@@ -222,7 +222,7 @@ Berdasarkan hasil visualisasi boxplot dan histogram pada tiga fitur numerik utam
     st.markdown("---")
     st.markdown("<h2 style='text-align: center;'>Confusion Matrix – KNN with SMOTE</h2>", unsafe_allow_html=True)
 
-    cm_path = Path("Confussion Matrix.png")  # nama file yang kamu sebutkan
+    cm_path = Path("Deploy-Fase-1/Confussion Matrix.png")  # nama file yang kamu sebutkan
     if cm_path.exists():
         cm_bytes = cm_path.read_bytes()
         cm_b64 = base64.b64encode(cm_bytes).decode()
